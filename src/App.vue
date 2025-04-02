@@ -2,13 +2,18 @@
   <div>
     <h3>Košarica</h3>
     <div class="inputi">
-      <form action="">
+      <form @submit.prevent>
         <label for="naziv">Naziv proizvoda</label>
         <input type="text" placeholder="Upiši naziv proizvoda:" v-model="noviProizvod" />
       </form>
-      <form action="">
+      <form @submit.prevent>
         <label for="naziv">Cijena proizvoda</label>
-        <input type="number" placeholder="Upiši cijenu proizvoda:" v-model="novaCijena" />
+        <input
+          type="number"
+          step="any"
+          placeholder="Upiši cijenu proizvoda:"
+          v-model="novaCijena"
+        />
       </form>
       <button @click="dodajProizvod" :disabled="!noviProizvod" class="btn-dodaj">
         Dodaj artikl
